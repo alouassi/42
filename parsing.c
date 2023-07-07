@@ -6,7 +6,7 @@
 /*   By: alouassi <alouassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 09:39:17 by alouassi          #+#    #+#             */
-/*   Updated: 2023/06/08 11:09:50 by alouassi         ###   ########.fr       */
+/*   Updated: 2023/07/07 17:00:15 by alouassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	skip(int n, char**argv, int i)
 	i++;
 	while (argv[i])
 	{
-		if (ft_atoi(argv[i] == n))
+		if (ft_atoi(argv[i]) == n)
 			return (1);
 		i++;
 	}
@@ -46,9 +46,9 @@ static int	argzero(char *ar)
 
 	i = 0;
 	if (ar[i] == '+' || ar[i] == '-')
-	i++;
+		i++;
 	while (ar[i] && ar[i] == '0')
-	i++;
+		i++;
 	if (ar[i] == '\0')
 		return (0);
 	return (1);
@@ -73,6 +73,4 @@ void	ft_argument(int argc, char **argv)
 			ft_error("error\n");
 		i++;
 	}
-/*	if (ft_overflow(ar) == 0)
-		ft_error("error\n");*/
 }

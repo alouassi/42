@@ -6,7 +6,7 @@
 /*   By: alouassi <alouassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 06:41:12 by alouassi          #+#    #+#             */
-/*   Updated: 2023/06/08 09:54:41 by alouassi         ###   ########.fr       */
+/*   Updated: 2023/07/07 13:25:08 by alouassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_rotate(t_stack **stack)
 	t_stack	*tmp;
 	t_stack	*fin;
 
+	if ((*stack)->next == NULL)
+		return ;
 	tmp = *stack;
 	(*stack) = tmp->next;
 	fin = ft_lstlast(*stack);

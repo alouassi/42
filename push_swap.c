@@ -6,7 +6,7 @@
 /*   By: alouassi <alouassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 08:19:02 by alouassi          #+#    #+#             */
-/*   Updated: 2023/06/09 09:25:24 by alouassi         ###   ########.fr       */
+/*   Updated: 2023/07/07 17:03:09 by alouassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,34 +33,30 @@ void	init_stack(t_stack **stack, int argc, char **argv)
 	}
 }
 
-/*static void	push_swap(t_stack **stack_a)
+int	ft_dejatri(t_stack **stack)
+{
+	t_stack	*a;
+
+	a = *stack;
+	while (a->next != NULL)
+	{
+		if (a->value > a->next->value)
+			return (1);
+		a = a->next;
+	}
+	return (0);
+}
+
+static void	push_swap(t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_lstsize(*stack_a) <= 3)
 		ft_sort3(stack_a);
-}*/
-
-/*void	rien(t_stack **stack_a)
-{
-	t_stack	*b;
-
-	b = *stack_a;
-	while (b)
-	{
-		printf("%d\n", b->index);
-		b = b->next;
-	}
-}*/
-
-void	val(t_stack **stack_a)
-{
-	t_stack	*b;
-
-	b = *stack_a;
-	while (b)
-	{
-		printf("%d\n", b->value);
-		b = b->next;
-	}
+	else if (ft_lstsize(*stack_a) <= 5)
+		ft_sort5(stack_a, stack_b);
+	else if (ft_lstsize(*stack_a) <= 100)
+		ft_algomax(stack_a, stack_b, 12);
+	else if (ft_lstsize(*stack_a) > 100)
+		ft_algomax(stack_a, stack_b, 30);
 }
 
 int	main(int argc, char **argv)
@@ -69,19 +65,17 @@ int	main(int argc, char **argv)
 	t_stack	**stack_b;
 
 	if (argc < 2)
-		return (-1);
+		return (1);
+	if (argc == 2)
+		return (0);
+	//ft_argument(argc, argv);
 	stack_a = (t_stack **)malloc(sizeof(t_stack));
 	stack_b = (t_stack **)malloc(sizeof(t_stack));
 	*stack_a = NULL;
 	*stack_b = NULL;
 	init_stack(stack_a, argc, argv);
-	//rien(stack_a);//
-	write (1, "\n", 1);
-	val(stack_a);
-	//push_swap(stack_a);//
-	ft_sa(stack_a);
-	val(stack_b);
-	write (1, "\n", 1);
-	val(stack_a);
+	if (ft_dejatri(stack_a) == 1) 
+		push_swap(stack_a, stack_b);
+		system("leaks push_swap");
 	return (0);
 }
