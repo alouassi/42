@@ -6,7 +6,7 @@
 /*   By: alouassi <alouassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 17:25:34 by alouassi          #+#    #+#             */
-/*   Updated: 2023/07/07 17:02:02 by alouassi         ###   ########.fr       */
+/*   Updated: 2023/07/08 13:21:22 by alouassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,19 @@ int	ft_strcmp(const char *s1, const char *s2)
 		i++;
 	}
 	return (*(unsigned char *)(s1 + i) - *(unsigned char *)(s2 + i));
+}
+
+void	ft_putendl_fd(char *s, int fd)
+{
+	int	n;
+
+	if (!s)
+		return ;
+	n = 0;
+	while (s[n] != '\0')
+	{
+		write(fd, &s[n], 1);
+		++n;
+	}
+	write(fd, "\n", 1);
 }

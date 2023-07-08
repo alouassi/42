@@ -6,7 +6,7 @@
 /*   By: alouassi <alouassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 08:01:01 by alouassi          #+#    #+#             */
-/*   Updated: 2023/07/07 16:48:28 by alouassi         ###   ########.fr       */
+/*   Updated: 2023/07/08 13:26:27 by alouassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ static int	bigestindex(t_stack *stack)
 
 void	ft_algo1(t_stack **stack_a, t_stack **stack_b)
 {
-	int	posi;
-	int	len;
+	int		posi;
+	int		len;
 	t_stack	*max;
 
 	while (*stack_b)
 	{
 		max = ft_maxval(stack_b);
 		posi = ft_posi(stack_b, &max);
-		len = ft_lstsize(*stack_b) /2 ;
+		len = ft_lstsize(*stack_b) / 2;
 		while (posi <= len && (*stack_b)->value != max->value)
 			ft_rb(stack_b);
 		while (posi > len && (*stack_b)->value != max->value)
@@ -63,8 +63,6 @@ void	ft_sort5(t_stack **stack_a, t_stack **stack_b)
 		ft_sa(stack_a);
 	ft_algo1(stack_a, stack_b);
 }
-
-
 
 void	ft_sort3(t_stack **stack)
 {

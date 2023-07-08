@@ -6,7 +6,7 @@
 /*   By: alouassi <alouassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 11:51:24 by alouassi          #+#    #+#             */
-/*   Updated: 2023/07/07 17:01:18 by alouassi         ###   ########.fr       */
+/*   Updated: 2023/07/08 11:36:52 by alouassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,20 @@ void		ft_sb(t_stack **stack_b);
 void		ft_ss(t_stack **stack_a, t_stack **stack_b);
 void		ft_free(char **str);
 void		free_stack(t_stack **stack);
-void		ft_error(char *m);
+void		ft_error(char *str);
+int			ft_isdigit(int c);
 t_stack		*ft_lstnew(int value);
 void		ft_lstadd_front(t_stack **stack, t_stack *new);
+void		ft_putendl_fd(char *s, int fd);
 int			ft_lstsize(t_stack *a);
 t_stack		*ft_lstlast(t_stack *a);
 void		ft_lstadd_back(t_stack **stack, t_stack *frist);
-void		ft_argument(int argc, char **argv);
+void		ft_argument(char **argv);
 void		ft_sort3(t_stack **stack);
 void		ft_sort5(t_stack **stack_a, t_stack **stack_b);
 int			get_size(t_stack *stack);
 void		ft_algomax(t_stack **stack_a, t_stack **stack_b, int tailemax);
 t_stack		*ft_maxval(t_stack **stack);
-void		ft_algo2(t_stack **stack_a,t_stack **stack_b);
+void		ft_algo2(t_stack **stack_a, t_stack **stack_b);
 int			ft_posi(t_stack **stack, t_stack **max);
 #endif

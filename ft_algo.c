@@ -6,7 +6,7 @@
 /*   By: alouassi <alouassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 13:13:32 by alouassi          #+#    #+#             */
-/*   Updated: 2023/07/07 16:14:15 by alouassi         ###   ########.fr       */
+/*   Updated: 2023/07/08 13:27:14 by alouassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_stack	*ft_maxval(t_stack **stack)
 
 int	ft_posi(t_stack **stack, t_stack **max)
 {
-	int	pos;
+	int		pos;
 	t_stack	*a;
 
 	pos = 1;
@@ -47,8 +47,8 @@ int	ft_posi(t_stack **stack, t_stack **max)
 
 void	ft_algo2(t_stack **stack_a, t_stack **stack_b)
 {
-	int	posi;
-	int	len;
+	int		posi;
+	int		len;
 	t_stack	*max;
 
 	while (*stack_b)

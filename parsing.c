@@ -6,7 +6,7 @@
 /*   By: alouassi <alouassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 09:39:17 by alouassi          #+#    #+#             */
-/*   Updated: 2023/07/07 17:00:15 by alouassi         ###   ########.fr       */
+/*   Updated: 2023/07/08 13:21:03 by alouassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	numeric(char *n)
 
 	i = 0;
 	if (n[0] == '-')
-	i++;
+		i++;
 	while (n[i])
 	{
 		if (!ft_isdigit(n[i]))
@@ -40,36 +40,22 @@ static int	numeric(char *n)
 	return (1);
 }
 
-static int	argzero(char *ar)
-{
-	int	i;
-
-	i = 0;
-	if (ar[i] == '+' || ar[i] == '-')
-		i++;
-	while (ar[i] && ar[i] == '0')
-		i++;
-	if (ar[i] == '\0')
-		return (0);
-	return (1);
-}
-
-void	ft_argument(int argc, char **argv)
+void	ft_argument(char **argv)
 {
 	int		i;
 	char	**ar;
-	int		num;
+	long	num;
 
 	i = 1;
 	ar = argv;
 	while (ar[i])
 	{
 		num = ft_atoi(ar[i]);
-		if (!skip(num, ar, i))
-			ft_error("error\n");
 		if (!numeric(ar[i]))
 			ft_error("error\n");
-		if (ft_argzero(ar[i]))
+		if (skip(num, ar, i))
+			ft_error("error\n");
+		if (num < -2148473648 || num > 2148473648)
 			ft_error("error\n");
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: alouassi <alouassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 08:24:55 by alouassi          #+#    #+#             */
-/*   Updated: 2023/07/07 17:03:50 by alouassi         ###   ########.fr       */
+/*   Updated: 2023/07/08 13:20:55 by alouassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_free(char **str)
 	while (str[i])
 		i++;
 	while (i >= 0)
-	{	
+	{
 		free(str[i]);
 		i--;
 	}
@@ -41,12 +41,11 @@ void	free_stack(t_stack **stack)
 	free(stack);
 }
 
-/*void	ft_error(char *m)
+void	ft_error(char *str)
 {
-	
-	write(2, "Error\n", 6);
+	ft_putendl_fd(str, 1);
 	exit (EXIT_FAILURE);
-}*/
+}
 
 t_stack	*ft_lstnew(int value)
 {
@@ -59,4 +58,13 @@ t_stack	*ft_lstnew(int value)
 	new->index = -1;
 	new->next = NULL;
 	return (new);
+}
+
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+	{
+		return (1);
+	}
+	return (0);
 }

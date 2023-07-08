@@ -6,7 +6,7 @@
 /*   By: alouassi <alouassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 08:19:02 by alouassi          #+#    #+#             */
-/*   Updated: 2023/07/07 17:03:09 by alouassi         ###   ########.fr       */
+/*   Updated: 2023/07/08 13:21:31 by alouassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	main(int argc, char **argv)
 		return (1);
 	if (argc == 2)
 		return (0);
-	//ft_argument(argc, argv);
+	ft_argument(argv);
 	stack_a = (t_stack **)malloc(sizeof(t_stack));
 	stack_b = (t_stack **)malloc(sizeof(t_stack));
 	*stack_a = NULL;
@@ -76,6 +76,5 @@ int	main(int argc, char **argv)
 	init_stack(stack_a, argc, argv);
 	if (ft_dejatri(stack_a) == 1) 
 		push_swap(stack_a, stack_b);
-		system("leaks push_swap");
 	return (0);
 }

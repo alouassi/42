@@ -6,11 +6,11 @@
 #    By: alouassi <alouassi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/08 12:54:23 by alouassi          #+#    #+#              #
-#    Updated: 2023/07/07 17:04:08 by alouassi         ###   ########.fr        #
+#    Updated: 2023/07/08 13:17:47 by alouassi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS    =   push_swap.c ft_index.c ft_push.c ft_rev_rotate.c ft_rotate.c ft_swap.c ft_utils.c ft_utils2.c push_swap_utils.c ft_algo3.c ft_algo.c
+SRCS    =   push_swap.c ft_index.c ft_push.c ft_rev_rotate.c ft_rotate.c ft_swap.c ft_utils.c ft_utils2.c push_swap_utils.c ft_algo3.c ft_algo.c parsing.c
 OBJS    =   ${SRCS:.c=.o}
 RM      =   rm -f
 CFLAGS  =   -Wall -Wextra -Werror
